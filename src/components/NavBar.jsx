@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { changeTabActive } from "../redux/action";
 
-const NavBar = () => {
+const NavBar = ({activeTab}) => {
+  alert (activeTab);
   const [listNav] = useState(["home", "skills", "projects", "contacts"]);
   return (
     <header>
@@ -15,5 +18,8 @@ const NavBar = () => {
     </header>
   );
 };
+const mapStateToProps = (state) => ({
+  activeTab: state.activeTab
+})
 
-export default NavBar;
+export default connect(mapStateToProps, {changeTabActive})(NavBar);

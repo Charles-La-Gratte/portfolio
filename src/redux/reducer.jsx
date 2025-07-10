@@ -1,4 +1,4 @@
-const initialState = {
+ const initialState = {
     activeTab: 'home'
 }
 const rootReducer = (state = initialState, action) => {
@@ -10,3 +10,4 @@ const rootReducer = (state = initialState, action) => {
             return state;
     }
 }
+export default rootReducer
